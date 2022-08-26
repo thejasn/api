@@ -399,7 +399,7 @@ type LoadBalancerStrategy struct {
 // LoadBalancerDNSManagementPolicy is a policy for configuring how
 // ingresscontrollers manage DNS.
 //
-// +kubebuilder:validation:Enum=Managed;Unmanaged
+// +kubebuilder:validation:Enum=Managed;Unmanaged;""
 type LoadBalancerDNSManagementPolicy string
 
 const (
@@ -559,8 +559,7 @@ type AWSClassicLoadBalancerParameters struct {
 
 // AWSNetworkLoadBalancerParameters holds configuration parameters for an
 // AWS Network load balancer.
-type AWSNetworkLoadBalancerParameters struct {
-}
+type AWSNetworkLoadBalancerParameters struct{}
 
 // HostNetworkStrategy holds parameters for the HostNetwork endpoint publishing
 // strategy.
@@ -965,8 +964,7 @@ type SyslogLoggingDestinationParameters struct {
 
 // ContainerLoggingDestinationParameters describes parameters for the Container
 // logging destination type.
-type ContainerLoggingDestinationParameters struct {
-}
+type ContainerLoggingDestinationParameters struct{}
 
 // LoggingDestination describes a destination for log messages.
 // +union
