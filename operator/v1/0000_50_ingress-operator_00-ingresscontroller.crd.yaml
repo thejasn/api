@@ -226,7 +226,6 @@ spec:
                         enum:
                         - Managed
                         - Unmanaged
-                        - ""
                         type: string
                       providerParameters:
                         description: "providerParameters holds desired load balancer
@@ -1512,7 +1511,6 @@ spec:
                         enum:
                         - Managed
                         - Unmanaged
-                        - ""
                         type: string
                       providerParameters:
                         description: "providerParameters holds desired load balancer
