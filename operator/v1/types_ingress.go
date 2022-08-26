@@ -393,6 +393,7 @@ type LoadBalancerStrategy struct {
 	// +kubebuilder:default:="Managed"
 	// +kubebuilder:validation:Optional
 	// +optional
+	// +nullable
 	DNSManagementPolicy LoadBalancerDNSManagementPolicy `json:"dnsManagementPolicy,omitempty"`
 }
 
