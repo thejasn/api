@@ -394,7 +394,7 @@ type LoadBalancerStrategy struct {
 	// +kubebuilder:validation:Optional
 	// +optional
 	// +nullable
-	DNSManagementPolicy LoadBalancerDNSManagementPolicy `json:"dnsManagementPolicy,omitempty"`
+	DNSManagementPolicy LoadBalancerDNSManagementPolicy `json:"dnsManagementPolicy"`
 }
 
 // LoadBalancerDNSManagementPolicy is a policy for configuring how
