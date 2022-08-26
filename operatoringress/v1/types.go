@@ -72,7 +72,7 @@ type DNSRecordSpec struct {
 	// +kubebuilder:default:="Managed"
 	// +kubebuilder:validation:Optional
 	// +optional
-	DNSManagementPolicy DNSManagementPolicy `json:"dnsManagementPolicy"`
+	DNSManagementPolicy DNSManagementPolicy `json:"dnsManagementPolicy,omitempty"`
 }
 
 // DNSRecordStatus is the most recently observed status of each record.
