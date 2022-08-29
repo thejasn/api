@@ -280,18 +280,18 @@ type HTTPCompressionPolicy struct {
 //
 // The format should follow the Content-Type definition in RFC 1341:
 // Content-Type := type "/" subtype *[";" parameter]
-// - The type in Content-Type can be one of:
-//   application, audio, image, message, multipart, text, video, or a custom
-//   type preceded by "X-" and followed by a token as defined below.
-// - The token is a string of at least one character, and not containing white
-//   space, control characters, or any of the characters in the tspecials set.
-// - The tspecials set contains the characters ()<>@,;:\"/[]?.=
-// - The subtype in Content-Type is also a token.
-// - The optional parameter/s following the subtype are defined as:
-//   token "=" (token / quoted-string)
-// - The quoted-string, as defined in RFC 822, is surrounded by double quotes
-//   and can contain white space plus any character EXCEPT \, ", and CR.
-//   It can also contain any single ASCII character as long as it is escaped by \.
+//   - The type in Content-Type can be one of:
+//     application, audio, image, message, multipart, text, video, or a custom
+//     type preceded by "X-" and followed by a token as defined below.
+//   - The token is a string of at least one character, and not containing white
+//     space, control characters, or any of the characters in the tspecials set.
+//   - The tspecials set contains the characters ()<>@,;:\"/[]?.=
+//   - The subtype in Content-Type is also a token.
+//   - The optional parameter/s following the subtype are defined as:
+//     token "=" (token / quoted-string)
+//   - The quoted-string, as defined in RFC 822, is surrounded by double quotes
+//     and can contain white space plus any character EXCEPT \, ", and CR.
+//     It can also contain any single ASCII character as long as it is escaped by \.
 //
 // +kubebuilder:validation:Pattern=`^(?i)(x-[^][ ()\\<>@,;:"/?.=\x00-\x1F\x7F]+|application|audio|image|message|multipart|text|video)/[^][ ()\\<>@,;:"/?.=\x00-\x1F\x7F]+(; *[^][ ()\\<>@,;:"/?.=\x00-\x1F\x7F]+=([^][ ()\\<>@,;:"/?.=\x00-\x1F\x7F]+|"(\\[\x00-\x7F]|[^\x0D"\\])*"))*$`
 type CompressionMIMEType string
@@ -391,8 +391,9 @@ type LoadBalancerStrategy struct {
 	// Valid values are: Managed and Unmanaged.
 	//
 	// +kubebuilder:default:="Managed"
-	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Required
+	// +required
+	// +default="Managed"
 	DNSManagementPolicy LoadBalancerDNSManagementPolicy `json:"dnsManagementPolicy,omitempty"`
 }
 
@@ -559,8 +560,7 @@ type AWSClassicLoadBalancerParameters struct {
 
 // AWSNetworkLoadBalancerParameters holds configuration parameters for an
 // AWS Network load balancer.
-type AWSNetworkLoadBalancerParameters struct {
-}
+type AWSNetworkLoadBalancerParameters struct{}
 
 // HostNetworkStrategy holds parameters for the HostNetwork endpoint publishing
 // strategy.
@@ -965,8 +965,7 @@ type SyslogLoggingDestinationParameters struct {
 
 // ContainerLoggingDestinationParameters describes parameters for the Container
 // logging destination type.
-type ContainerLoggingDestinationParameters struct {
-}
+type ContainerLoggingDestinationParameters struct{}
 
 // LoggingDestination describes a destination for log messages.
 // +union

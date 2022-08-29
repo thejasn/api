@@ -26407,7 +26407,8 @@
       "properties": {
         "dnsManagementPolicy": {
           "description": "dnsManagementPolicy denotes the current policy applied on the DNS record. Records that have policy set as \"Unmanaged\" are ignored by the ingress operator.  This means that the DNS record on the cloud provider is not managed by the operator, and the \"Published\" status condition will be updated to \"Unknown\" status, since it is externally managed. Any existing record on the cloud provider can be deleted at the discretion of the cluster admin.\n\nThis field defaults to Managed. Valid values are \"Managed\" and \"Unmanaged\".",
-          "type": "string"
+          "type": "string",
+          "default": "Managed"
         },
         "dnsName": {
           "description": "dnsName is the hostname of the DNS record",

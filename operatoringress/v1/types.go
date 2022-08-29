@@ -70,8 +70,9 @@ type DNSRecordSpec struct {
 	// "Unmanaged".
 	//
 	// +kubebuilder:default:="Managed"
-	// +kubebuilder:validation:Optional
-	// +optional
+	// +kubebuilder:validation:Required
+	// +required
+	// +default="Managed"
 	DNSManagementPolicy DNSManagementPolicy `json:"dnsManagementPolicy,omitempty"`
 }
 
